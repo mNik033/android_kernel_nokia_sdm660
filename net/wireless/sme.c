@@ -1131,6 +1131,7 @@ int cfg80211_connect(struct cfg80211_registered_device *rdev,
 	} else {
 		if (WARN_ON(connkeys))
 			return -EINVAL;
+<<<<<<< HEAD
 
 		/* connect can point to wdev->wext.connect which
 		 * can hold key data from a previous connection
@@ -1140,6 +1141,8 @@ int cfg80211_connect(struct cfg80211_registered_device *rdev,
 		connect->key_idx = 0;
 		connect->crypto.cipher_group = 0;
 		connect->crypto.n_ciphers_pairwise = 0;
+=======
+>>>>>>> e773d44d3681 (BACKPORT: cfg80211: allow connect keys only with default (TX) key)
 	}
 
 	wdev->connect_keys = connkeys;

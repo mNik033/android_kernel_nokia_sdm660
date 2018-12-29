@@ -10,6 +10,7 @@
 #include <linux/irq_work.h>
 #include <linux/hrtimer.h>
 
+#include "walt.h"
 #include "tune.h"
 #include "walt.h"
 

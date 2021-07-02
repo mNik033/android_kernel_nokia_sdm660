@@ -2565,7 +2565,7 @@ static bool shrink_zone(struct zone *zone, struct scan_control *sc,
 		 */
 		vmpressure(sc->gfp_mask, sc->target_mem_cgroup,
 			   sc->nr_scanned - nr_scanned,
-			   sc->nr_reclaimed - nr_reclaimed);
+			   sc->nr_reclaimed - nr_reclaimed, sc->order);
 
 		if (reclaim_state) {
 			sc->nr_reclaimed += reclaim_state->reclaimed_slab;
@@ -2762,7 +2762,7 @@ retry:
 
 	do {
 		vmpressure_prio(sc->gfp_mask, sc->target_mem_cgroup,
-				sc->priority);
+				sc->priority, sc->order);
 		sc->nr_scanned = 0;
 		zones_reclaimable = shrink_zones(zonelist, sc);
 

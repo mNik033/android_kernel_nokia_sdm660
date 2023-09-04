@@ -7995,6 +7995,9 @@ select_task_rq_fair(struct task_struct *p, int prev_cpu, int sd_flag, int wake_f
 	return select_best_cpu(p, prev_cpu, 0, sync);
 #endif
 
+	if (sd_flag & SD_BALANCE_EXEC)
+		return prev_cpu;
+	
 	if (sd_flag & SD_BALANCE_WAKE) {
 		record_wakee(p);
 		want_affine = !wake_wide(p, sibling_count_hint) &&

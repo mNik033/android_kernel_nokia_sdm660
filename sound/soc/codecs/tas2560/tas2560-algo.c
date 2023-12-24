@@ -1,6 +1,6 @@
 #include <sound/smart_amp.h>
 #include <sound/q6afe-v2.h>
-#include <tas2560-calib.h>
+#include "tas2560-calib.h"
 
 /*Master Control to Bypass the Smartamp TI CAPIv2 module*/
 static int smartamp_bypass = TAS_FALSE;

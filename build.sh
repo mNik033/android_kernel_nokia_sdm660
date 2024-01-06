@@ -62,17 +62,17 @@ echo "---------------------------------------"
 
 # Zip Kernel
 function make_zip() {
-cp /home/nik033/android_kernel_nokia_sdm660/out/arch/arm64/boot/Image.gz-dtb /home/nik033/android_kernel_nokia_sdm660/AnyKernel3/
+cp /home/nik033/lo20/out/arch/arm64/boot/Image.gz-dtb /home/nik033/lo20/AnyKernel3/
 cd && mkdir -p KERNEL_BUILDS
-cd /home/nik033/android_kernel_nokia_sdm660/AnyKernel3/
+cd /home/nik033/lo20/AnyKernel3/
 zip -r9 UPDATE-AnyKernel2.zip * -x README UPDATE-AnyKernel2.zip
-mv /home/nik033/android_kernel_nokia_sdm660/AnyKernel3/UPDATE-AnyKernel2.zip /home/nik033/KERNEL_BUILDS/$FINAL_ZIP
+mv /home/nik033/lo20/AnyKernel3/UPDATE-AnyKernel2.zip /home/nik033/KERNEL_BUILDS/$FINAL_ZIP
 echo "---------------------------------------"
 }
 
 # Clean Up
 function cleanup(){
-rm -rf /home/nik033/android_kernel_nokia_sdm660/AnyKernel3/Image.gz-dtb
+rm -rf /home/nik033/lo20/AnyKernel3/Image.gz-dtb
 }
 
 # Menu
